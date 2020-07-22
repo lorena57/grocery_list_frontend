@@ -7,14 +7,16 @@ class Groceries {
     }
 
     fetchAndLoadNotes() {
-        this.adapter.getGroceries().then(grocery => {
-            console.log(grocery)
+        this.adapter
+        .getGroceries()
+        .then(groceries => {
+         return console.log(groceries)
+        })
+        .then(() => {
+            this.render()
         })
     }
     
-
-
-
     render() {
         const groceriesContainer = document.getElementById('groceries-container')
         groceriesContainer.innerHTML = 'my notes'
