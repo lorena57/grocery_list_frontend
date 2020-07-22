@@ -7,9 +7,12 @@ class Groceries {
     }
 
     fetchAndLoadNotes() {
-        this.adapter.getGroceries().then(grocery => {
-            console.log(grocery)
+        this.adapter
+        .getGroceries()
+        .then(grocery => {
+            return console.log(grocery)
         })
+        .then(() =>this.render)
     }
 
     render() {
