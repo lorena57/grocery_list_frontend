@@ -10,3 +10,5 @@ class GroceriesAdapter {
 
 
 }
+
+// This adapter will talk to the backend
