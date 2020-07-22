@@ -2,7 +2,7 @@ class Groceries {
     constructor() {
         this.groceries = []
         this.adapter = new GroceriesAdapter()
-        this.bindEventListeners()
+        // this.bindEventListeners()
         this.fetchAndLoadNotes()
     }
 

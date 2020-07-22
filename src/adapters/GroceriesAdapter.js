@@ -4,7 +4,7 @@ class GroceriesAdapter {
     }
 
     getGroceries() {
-        return fetch(this.baseUrl).then(res => res.JSON()
+        return fetch(this.baseUrl).then(res => res.json()
         )
     }
 
