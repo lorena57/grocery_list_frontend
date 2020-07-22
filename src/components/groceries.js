@@ -15,6 +15,11 @@ class Groceries {
 
 
 
+    render() {
+        const groceriesContainer = document.getElementById('groceries-container')
+        groceriesContainer.innerHTML = 'my notes'
+    }
+
 }
 
 // The meat of my code will on the page
