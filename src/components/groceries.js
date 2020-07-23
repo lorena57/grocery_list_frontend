@@ -12,6 +12,7 @@ class Groceries {
         .then(groceries => {
         //  return console.log(groceries)
         groceries.data.forEach(note => this.groceries.push(note))
+        console.log(this.groceries)
         })
         .then(() => {
             this.render()
