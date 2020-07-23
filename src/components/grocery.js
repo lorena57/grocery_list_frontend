@@ -1,5 +1,7 @@
 class Grocery {
-    constructor(groceryJson)
+    constructor(groceryJson){
     this.id = groceryJson.id
-    this.name = groceryJson.name
+    this.grocery_item = groceryJson.grocery_item
+    this.qty = groceryJson.qty
+    }
 }
