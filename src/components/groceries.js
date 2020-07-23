@@ -3,10 +3,10 @@ class Groceries {
         this.groceries = []
         this.adapter = new GroceriesAdapter()
         // this.bindEventListeners()
-        this.fetchAndLoadNotes()
+        this.fetchAndLoadGroceries()
     }
 
-    fetchAndLoadNotes() {
+    fetchAndLoadGroceries() {
         this.adapter
         .getGroceries()
         .then(groceries => {
