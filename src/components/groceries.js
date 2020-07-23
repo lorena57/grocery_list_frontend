@@ -10,7 +10,8 @@ class Groceries {
         this.adapter
         .getGroceries()
         .then(groceries => {
-         return console.log(groceries)
+        //  return console.log(groceries)
+        groceries.data.forEach(note => this.groceries.push(note))
         })
         .then(() => {
             this.render()
@@ -20,6 +21,7 @@ class Groceries {
     render() {
         const groceriesContainer = document.getElementById('groceries-container')
         groceriesContainer.innerHTML = 'my notes'
+        // console.log('my groceries are', this.groceries)
     }
 
 }
