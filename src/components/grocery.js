@@ -3,6 +3,7 @@ class Grocery {
         this.id = grocery.id
         this.market = groceryJson.market
         this.groceryItem = groceryJson.grocery_item
+        this.groceryNotes = groceryJson.notes
         this.qty = groceryJson.qty
         Grocery.all.push(this)
      }
@@ -11,9 +12,10 @@ class Grocery {
         // return `<li grocery.id=${this.id}>${this.market.name}${this.groceryItem}</li>`
 
         return `<p grocery.id= ${this.id}>${this.market.name}</p>
-        <ul>
-            <li>${this.groceryItem}</li>
-        </ul>`
+        <dl>
+            <dt>${this.groceryItem}</dt>
+            <dd>- ${this.groceryNotes}</dd>
+        </dl>`
     }
 
 
