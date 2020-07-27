@@ -1,10 +1,11 @@
 class Grocery {
     constructor(grocery, groceryJson){ 
         this.id = grocery.id
+        this.marketId = groceryJson.marketId
         this.market = groceryJson.market
         this.groceryItem = groceryJson.grocery_item
         this.groceryNotes = groceryJson.notes
-        this.qty = groceryJson.qty
+        // this.qty = groceryJson.qty
         Grocery.all.push(this)
      }
     
@@ -13,12 +14,18 @@ class Grocery {
             <dl>
                 <dt>${this.groceryItem}</dt>
                 <dd>- ${this.groceryNotes}</dd>
+                
             </dl>`
     }
+
+    
+    
+
+
+
+
 
 
 }
 
 Grocery.all = []
-
-    

@@ -8,6 +8,7 @@ class Groceries {
     bindEventListeners() {
         this.groceriesContainer = document.getElementById('groceries-container')
     }
+    
 
 
     fetchAndLoadGroceries() {
