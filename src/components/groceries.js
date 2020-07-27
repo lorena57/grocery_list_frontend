@@ -14,6 +14,23 @@ class Groceries {
         this.groceryForm = document.querySelector('new-grocery-form')
     }
 
+    selectHandler(e) {
+        const marketId = e.target.value
+
+        if (marketId == '4') {
+            this.groceryForm.innerHTML = Grocery.renderSafeWay();
+            }
+            else if (marketId == '3') {
+                this.groceryForm.innerHTML = Grocery.renderWinco();
+            }
+            else if (marketId == '2') {
+                this.groceryForm.innerHTML = Grocery.renderAlbertsons();
+            }
+            else {
+            this.groceryForm.innerHTML = Grocery.renderWholeFoods();
+            }
+    }
+
 
     
 
