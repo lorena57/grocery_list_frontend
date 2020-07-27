@@ -18,16 +18,18 @@ class Groceries {
         const marketId = e.target.value
 
         if (marketId == '4') {
-            this.groceryForm.innerHTML = Grocery.renderSafeWay();
+            // verify id correct for winco
+            this.groceryForm.innerHTML = Grocery.renderWinco();
             }
             else if (marketId == '3') {
-                this.groceryForm.innerHTML = Grocery.renderWinco();
+                this.groceryForm.innerHTML = Grocery.renderWholeFoods();
             }
             else if (marketId == '2') {
-                this.groceryForm.innerHTML = Grocery.renderAlbertsons();
+                // verify id correct for Albertsons
+            this.groceryForm.innerHTML = Grocery.renderAlbertsons();
             }
             else {
-            this.groceryForm.innerHTML = Grocery.renderWholeFoods();
+            this.groceryForm.innerHTML = Grocery.renderSafeWay();
             }
     }
 
