@@ -6,17 +6,15 @@ class Groceries {
     }
 
     bindEventListeners() {
+
+        // renders items to the index dl tag
         this.groceriesContainer = document.getElementById('groceries-container')
-        this.newGroceryBody = document.getElementById('new-grocery-body')
-        this.groceryForm = document.getElementById('new-grocery-form')
-        this.groceryForm.addEventListener('change', this.createGrocery.bind(this))
+
+
+        this.groceryForm = document.querySelector('new-grocery-form')
     }
 
-    createGrocery(e){
-        e.preventDefault()
-        const value = this.newGroceryBody.value
 
-    }
     
 
 
