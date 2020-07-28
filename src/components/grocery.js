@@ -6,7 +6,7 @@ class Grocery {
         this.groceryItem = groceryJson.grocery_item
         this.groceryNotes = groceryJson.notes
         // this.qty = groceryJson.qty
-        Grocery.all.push(this)
+       
      }
     
     render() {
@@ -14,18 +14,10 @@ class Grocery {
             <dl>
                 <dt>${this.groceryItem}</dt>
                 <dd>- ${this.groceryNotes}</dd>
-                
+                           
+
             </dl>`
     }
 
-    
-    
-
-
-
-
-
-
+   
 }
-
-Grocery.all = []
