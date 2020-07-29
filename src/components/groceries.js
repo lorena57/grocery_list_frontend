@@ -11,7 +11,7 @@ class Groceries {
         this.groceriesContainer = document.getElementById('groceries-container')
 
 
-        this.groceryForm = document.querySelector('new-grocery-form')
+        this.groceryForm = document.querySelector('create-grocery-form')
     }
 
     
@@ -26,5 +26,20 @@ class Groceries {
                 })
             })
     }
+
+    selectHandler(e) {
+
+        this.groceryForm.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const groceryItem = document.querySelector('input-grocery').value
+            const groceryNote = document.querySelector('notes').value
+            const marketId = parseInt(document.querySelector('markets')).value
+            this.groceryFetch(groceryItem, groceryNote, marketId)
+        })
+    }
+
+    
+
+
 
 }
