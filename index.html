@@ -7,7 +7,40 @@
 </head>
 <body>
 
-    <div class='container'>
+    <div class="form-container">
+        <form id="create-grocery-form">
+            <select name="markets" id="markets">
+                <option value="">--Please choose a market--</option>
+                <option value="1">SafeWay</option>
+                <option value="2">Albertsons</option>
+                <option value="3">Whole Foods</option>
+                <option value="4">Winco</option>
+            </select>
+
+            <br><br>
+
+            <input type="text" id="input-grocery" name="grocery" 
+            placeholder="What are we buying?" class="input-text"> 
+
+            <br><br>
+
+            <textarea name="input-notes" id="notes" cols="30" rows="10"></textarea>
+
+            <br><br>
+
+            <input type="submit" name="submit" id="create-button" value="Create a new grocery list" class="submit">
+            
+        </form>
+
+    </div>
+
+    <br><br>
+
+    <div id="grocery-container">
+
+    </div>
+
+    <!-- <div class='container'>
         <h1>Groceries</h1>
         <div id='new-grocery-container'>
 
@@ -29,7 +62,7 @@
 
         </dl>
         
-    </div>
+    </div> -->
 
 <script src="src/components/grocery.js"></script>
     <script src="src/components/groceries.js"></script>
