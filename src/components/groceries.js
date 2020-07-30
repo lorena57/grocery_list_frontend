@@ -8,7 +8,7 @@ class Groceries {
     bindEventListeners() {
 
         // renders items to the index dl tag
-        this.groceriesContainer = document.getElementById('groceries-container')
+        this.groceriesContainer = document.getElementById('grocery-container')
 
 
         this.groceryForm = document.querySelector('create-grocery-form')
@@ -35,6 +35,15 @@ class Groceries {
             const groceryNote = document.querySelector('notes').value
             const marketId = parseInt(document.querySelector('markets')).value
             this.groceryFetch(groceryItem, groceryNote, marketId)
+        })
+    }
+
+    groceryFetch(groceryItem, groceryNote, marketId){
+        this.adapter.groceryFetch(groceryItem, groceryNote, marketId).then(list => {
+            const newGroceryList = new Grocery(list.data.id, grocery.data.attributes)
+            
+            this.groceriesContainer.innerHTML += newGroceryList.render()
+
         })
     }
 
