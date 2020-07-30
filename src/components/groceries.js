@@ -8,7 +8,7 @@ class Groceries {
     bindEventListeners() {
 
         // renders items to the index dl tag
-        this.groceriesContainer = document.getElementById('groceries-container')
+        this.groceriesContainer = document.getElementById('grocery-container')
 
 
         this.groceryForm = document.querySelector('#create-grocery-form')
