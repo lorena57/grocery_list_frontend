@@ -9,17 +9,15 @@ class GroceriesAdapter {
     }
 
     groceryFetch(marketId, groceryItem, groceryNote) {
-        // const newGrocery = {
-        //     marketId: marketId,
-        //     grocery: groceryItem,
-        //     notes: groceryNote,
-        // }
-        const newGrocery = { marketId, groceryItem, groceryNote}
+        const newGrocery = {
+            marketId: marketId,
+            groceryItem: groceryItem,
+            notes: groceryNote,
+        }
         return fetch(this.baseUrl, {
             method: 'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({newGrocery}),
-
         })
         .then(res => res.json())
     }

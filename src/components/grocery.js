@@ -1,7 +1,7 @@
 class Grocery {
     constructor(grocery, groceryJson){ 
         this.id = grocery.id
-        this.marketId = groceryJson.marketId
+        this.marketId = groceryJson.market_id
         this.market = groceryJson.market
         this.groceryItem = groceryJson.grocery_item
         this.groceryNotes = groceryJson.notes
@@ -19,7 +19,7 @@ class Grocery {
             </dl>`
     }
 
-    
+
 
    
 }
