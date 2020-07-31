@@ -1,16 +1,18 @@
 class Grocery {
-    constructor(grocery, groceryJson){ 
-        this.id = grocery.id
-        this.marketId = groceryJson.market_id
-        this.market = groceryJson.market
-        this.groceryItem = groceryJson.grocery_item
-        this.groceryNotes = groceryJson.notes
+    constructor(grocery){ 
+        // this.id = grocery.id
+        this.marketId = grocery.market_id
+        // this.name = grocery.market.name Not passing in the name
+        this.groceryItem = grocery.grocery_item
+        this.groceryNotes = grocery.notes
+        
+       
         // this.qty = groceryJson.qty
        
      }
     
     render() {
-        return `<p grocery.id= ${this.id}>${this.market.name}</p>
+        return `<p grocery.id= ${this.id}>${this.name}</p>
             <dl>
                 <dt>${this.groceryItem}</dt>
                 <dd>- ${this.groceryNotes}</dd>
@@ -23,3 +25,4 @@ class Grocery {
 
    
 }
+

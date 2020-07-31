@@ -21,11 +21,13 @@ class Groceries {
         this.adapter
             .getGroceries()
             .then(groceries => {
+                console.log(groceries)
                 groceries.data.forEach(grocery => {
-                    const newGrocery = new Grocery(grocery, grocery.attributes)
+                    const newGrocery = new Grocery(grocery.attributes)
                     this.groceriesContainer.innerHTML += newGrocery.render()
                 })
             })
+            
     }
 
     createGrocery(e) {
@@ -33,13 +35,16 @@ class Groceries {
             const groceryItem = document.querySelector('#input-grocery').value
             const groceryNote = document.querySelector('#notes').value
             const marketId = parseInt(document.querySelector('#markets').value)
-        this.groceryFetch(marketId, groceryItem, groceryNote)
+            const marketName = document.querySelector('#markets').text
+        this.groceryFetch(marketId, groceryItem, groceryNote, marketName)
     }
 
-     groceryFetch(marketId, groceryItem, groceryNote) {
+    groceryFetch(marketId, groceryItem, groceryNote, marketName) {
         
-         this.adapter.groceryFetch(marketId, groceryItem, groceryNote).then(grocery => {
-            const newGroceryList = new Grocery(grocery.data.id, grocery.data.attributes)
+        this.adapter.groceryFetch(marketId, groceryItem, groceryNote, marketName).then(grocery => {
+             console.log(grocery)
+            const newGroceryList = new Grocery(grocery)
+            
             this.groceriesContainer.innerHTML += newGroceryList.render()
         })
     }
