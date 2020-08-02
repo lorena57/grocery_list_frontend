@@ -35,18 +35,22 @@ class Groceries {
             const groceryItem = document.querySelector('#input-grocery').value
             const groceryNote = document.querySelector('#notes').value
             const marketId = parseInt(document.querySelector('#markets').value)
-            const marketName = document.querySelector('#markets').text
+            const marketName = document.getElementById('#markets')
         this.groceryFetch(marketId, groceryItem, groceryNote, marketName)
     }
 
-    groceryFetch(marketId, groceryItem, groceryNote, marketName) {
+  groceryFetch(marketId, groceryItem, groceryNote, marketName) {
         
-        this.adapter.groceryFetch(marketId, groceryItem, groceryNote, marketName).then(grocery => {
-             console.log(grocery)
-            const newGroceryList = new Grocery(grocery)
-            
-            this.groceriesContainer.innerHTML += newGroceryList.render()
+    
+     this.adapter.groceryFetch(marketId, groceryItem, groceryNote, marketName).then(grocery => {
+           
+        const newGroceryList = new Grocery(grocery)
+            console.log(newGroceryList)
+            console.log(grocery)
+            // this.groceriesContainer.innerHTML += newGroceryList.render()
+            this.fetchAndLoadGroceries()
         })
+
     }
 
     

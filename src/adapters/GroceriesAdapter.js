@@ -9,8 +9,6 @@ class GroceriesAdapter {
     }
 
     groceryFetch(marketId, groceryItem, groceryNote, marketName) {
-
-        
         return fetch(this.baseUrl, {
             method: 'POST',
             headers: {'content-type': 'application/json'},
