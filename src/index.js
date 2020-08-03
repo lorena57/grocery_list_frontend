@@ -1,3 +1,4 @@
+console.log("in js file")
 const app = new App()
 
 // indexed.js will kick off the application
