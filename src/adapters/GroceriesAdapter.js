@@ -15,7 +15,27 @@ class GroceriesAdapter {
             body: JSON.stringify({ market_id: marketId, grocery_item: groceryItem, notes: groceryNote, name: marketName}),
         })
         .then(res => res.json())
-    }}
+    }
+
+    //function to update grocery list
+    // groceryUpdate(marketId, groceryItem, groceryNote, marketName) {
+    //     return fetch(this.baseUrl, {
+    //         method: 'PATCH',
+    //         headers: { 'content-type': 'application/json' },
+    //         body: JSON.stringify({ market_id: marketId, grocery_item: groceryItem, notes: groceryNote, name: marketName }),
+    //     })
+    //         .then(res => res.json())
+    // }
+
+
+
+
+
+
+
+
+
+}
 
 
 

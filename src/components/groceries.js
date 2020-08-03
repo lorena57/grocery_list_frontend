@@ -11,8 +11,8 @@ class Groceries {
         this.groceryForm.addEventListener('submit', this.createGrocery.bind(this))
     }
 
-    
-       //function to post a new grocery list
+
+    //function to post a new grocery list
     fetchAndLoadGroceries() {
         this.adapter
             .getGroceries()
@@ -20,14 +20,14 @@ class Groceries {
                 groceries.data.forEach(grocery => {
                     const newGrocery = new Grocery(grocery.attributes)
                     //Text area of what grocery list
-                    document.querySelector('#input-grocery').value = ' '
+                    document.querySelector('#input-grocery').value = ''
                     //Text area of notes
-                    document.querySelector('#notes').value = ' '
+                    document.querySelector('#notes').value = ''
                     //Select option value
-                    parseInt(document.querySelector('#markets').value)
+                    parseInt(document.querySelector('#markets').value='')
                     this.groceriesContainer.innerHTML += newGrocery.render()
                 })
-            })   
+            })
     }
 
     // 
@@ -42,8 +42,8 @@ class Groceries {
 
     //Function shows initial fetch of groceries
     groceryFetch(marketId, groceryItem, groceryNote, marketName) {
-        this.adapter.groceryFetch(marketId, groceryItem, groceryNote, marketName).then(grocery => { 
-        const newGroceryList = new Grocery(grocery)
+        this.adapter.groceryFetch(marketId, groceryItem, groceryNote, marketName).then(grocery => {
+            const newGroceryList = new Grocery(grocery)
             // console.log(newGroceryList)
             // console.log(grocery)
             // this.groceriesContainer.innerHTML += newGroceryList.render()
@@ -52,7 +52,7 @@ class Groceries {
 
     }
 
-    
+
 
 
 }
