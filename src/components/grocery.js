@@ -7,13 +7,25 @@ class Grocery {
         Grocery.all.push(this)
      }
     
+    // render() {
+    //     return `<p grocery.id= ${this.id}></p>
+    //         <dl>
+    //         <dt>${this.market.name}</dt>
+    //             <dt>${this.groceryItem}</dt>
+    //             <dd>- ${this.groceryNotes}</dd>
+    //         </dl>`
+    // }
+
     render() {
-        return `<p grocery.id= ${this.id}></p>
-            <dl>
-            <dt>${this.market.name}</dt>
-                <dt>${this.groceryItem}</dt>
-                <dd>- ${this.groceryNotes}</dd>
-            </dl>`
+        return `<li grocery.id= ${this.id}>
+        
+            ${this.market.name}
+            <br>
+            ${this.groceryItem}
+            <br>
+            ${this.groceryNotes}
+            </li>
+            `
     }
 
 

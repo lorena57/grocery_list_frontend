@@ -7,8 +7,11 @@ class Groceries {
 
     bindEventListeners() {
         this.groceriesContainer = document.getElementById('groceries-container')
+        this.body = document.querySelector('body')
         this.groceryForm = document.querySelector('#create-grocery-form')
         this.groceryForm.addEventListener('submit', this.createGrocery.bind(this))
+        this.groceriesContainer.addEventListener('dblclick', this.handleGroceryClick.bind(this))
+        this.body.addEventListener('blur', this.updateGrocery.bind(this), true)
     }
 
 
@@ -28,6 +31,23 @@ class Groceries {
                     this.groceriesContainer.innerHTML += newGrocery.render()
                 })
             })
+    }
+
+    handleGroceryClick(e){
+        const li = e.target
+        li.contentEditable = true
+        li.focus()
+        li.classList.add('editable')
+    }
+
+    updateGrocery(e){
+        const li = e.target
+        li.contentEditable = false
+        li.focus()
+        li.classList.remove('editable')
+        const newValue = li.innerHTML
+        const id = li.this.id
+        this.adapter.updateGrocery(newValue, id)
     }
 
     // 
@@ -51,6 +71,8 @@ class Groceries {
         })
 
     }
+
+    
 
 
 
