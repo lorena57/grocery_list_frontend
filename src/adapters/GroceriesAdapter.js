@@ -27,8 +27,9 @@ class GroceriesAdapter {
     //         .then(res => res.json())
     // }
 
-    updateGrocery(newValue, id) {
-        return fetch(`${this.baseUrl}/${market_id}`, {
+    updateGrocery(marketId, groceryItem, groceryNote, marketName) {
+        debugger
+        return fetch(`${this.baseUrl}/${marketId}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ market_id: marketId, grocery_item: groceryItem, notes: groceryNote, name: marketName }),
@@ -42,12 +43,7 @@ class GroceriesAdapter {
 
 
 
-
-
 }
-
-
-
 
 
 

@@ -17,7 +17,8 @@ class Grocery {
     // }
 
     render() {
-        return `<li grocery.id= ${this.id}>
+        // return `<li grocery.id= ${this.id}>
+        return `<li data-id=${ this.id }>
         
             ${this.market.name}
             <br>

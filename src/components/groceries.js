@@ -46,7 +46,7 @@ class Groceries {
         li.focus()
         li.classList.remove('editable')
         const newValue = li.innerHTML
-        const id = li.this.id
+        const id = li.dataset.id
         this.adapter.updateGrocery(newValue, id)
     }
 
