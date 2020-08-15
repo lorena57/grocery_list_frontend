@@ -1,9 +1,11 @@
 class Grocery {
-    constructor(grocery){ 
-        this.marketId = grocery.market_id
-        this.market = grocery.market
-        this.groceryItem = grocery.grocery_item
-        this.groceryNotes = grocery.notes
+    constructor(id, groceryAttributes){ 
+        debugger
+        this.id = id
+        
+        this.market = groceryAttributes.market
+        this.groceryItem = groceryAttributes.grocery_item
+        this.groceryNotes = groceryAttributes.notes
         Grocery.all.push(this)
      }
     
@@ -25,6 +27,9 @@ class Grocery {
             ${this.groceryItem}
             <br>
             ${this.groceryNotes}
+            <br>
+            <button class="btn" data-id=${this.id}>Update List</button>
+
             </li>
             `
     }

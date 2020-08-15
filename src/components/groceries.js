@@ -21,7 +21,9 @@ class Groceries {
             .getGroceries()
             .then(groceries => {
                 groceries.data.forEach(grocery => {
-                    const newGrocery = new Grocery(grocery.attributes)
+                   
+                    const newGrocery = new Grocery(grocery.id, grocery.attributes)
+                  
                     //Text area of what grocery list
                     document.querySelector('#input-grocery').value = ''
                     //Text area of notes
@@ -47,6 +49,7 @@ class Groceries {
         li.classList.remove('editable')
         const newValue = li.innerHTML
         const id = li.dataset.id
+        // console.log(id)
         this.adapter.updateGrocery(newValue, id)
     }
 
@@ -63,6 +66,7 @@ class Groceries {
     //Function shows initial fetch of groceries
     groceryFetch(marketId, groceryItem, groceryNote, marketName) {
         this.adapter.groceryFetch(marketId, groceryItem, groceryNote, marketName).then(grocery => {
+            console.log(grocery)
             const newGroceryList = new Grocery(grocery)
             // console.log(newGroceryList)
             // console.log(grocery)
