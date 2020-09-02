@@ -1,87 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   
+    <title>Grocery List</title>
 </head>
+
 <body>
+    <header>
+        
+    </header>
 
-    <div class="form-container">
-        <form id="create-grocery-form">
-            <select name="markets" id="markets">
-                <option value="">--Please choose a market--</option>
-                <option value="1">SafeWay</option>
-                <option value="2">Albertsons</option>
-                <option value="3">Whole Foods</option>
-                <option value="4">Winco</option>
-            </select>
 
-            <br><br>
+    <main class="container">
+        <h1>Grocery List</h1>
 
-            <input type="text" id="input-grocery" name="grocery_1" 
-            placeholder="What are we buying?" class="input-text"> 
+        <div>
+            <form id="newpost-form">
+                <h2>Where are we shopping today? </h2>
+                <select class = "categories" name="categories" id="categories">
+                    <option value="" disabled="" selected="" hidden="">--Please choose an option--</option>
+                    <option value="albertsons">Albertsons</option>
+                    <option value="SafeWay">SafeWay</option>
+                    <option value="Winco">Winco</option>
+                    <option value="wholeFoods">Whole Foods</option>
+                </select><br><br>
 
-  
-            
-            
 
-            <br><br>
-
-            <textarea name="input-notes" id="notes" cols="30" rows="10">
                 
-            </textarea>
 
-            <br><br>
+        
+            </form>
+            <form id="search-form">
+                <input type="text" name="search" placeholder="Search By Category" />
+                <input class="btn" type="submit" value="Submit" />
 
-            <input type="submit" name="submit" id="create-button" value="Create a new grocery list" class="submit">
-            
-        </form>
-
-    </div>
-
-    <br><br>
-
-    <div id='groceries-container'>
-
-    </div>
-
-    <div id="update-grocery">
-
-    </div>
-
-
-    <!-- <div class='container'>
-        <h1>Groceries</h1>
-        <div id='new-grocery-container'>
-
-        <form id='new-grocery-form'>
-            <label for="markets">Select a Market:</label>
-            <select id="markets" name="markets">
-                <option value="">Market</option>
-                <option value="albertsons">Albertsons</option>
-                <option value="safeway">Safeway</option>
-                <option value="wholefoods">Whole Foods</option>
-                <option value="winco">Winco</option>
-            </select>
-        </form>
-
-       
+            </form>
         </div>
 
-        <dl id='groceries-container'>
+        <div id="update-post">
 
-        </dl>
-        
-    </div> -->
-   
+        </div>
 
+        <div id="post-content">
+            <ul id="posts-container">
+
+            </ul>
+        </div>
+        </div>
+    </main>
     <script src="src/components/grocery.js"></script>
     <script src="src/components/groceries.js"></script>
-   
     <script src="src/components/app.js"></script>
     <script src="src/adapters/GroceriesAdapter.js"></script>
     <script src="src/index.js"></script>
-    
 </body>
+
 </html>

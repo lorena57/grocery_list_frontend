@@ -3,60 +3,45 @@ class GroceriesAdapter {
         this.baseUrl = 'http://localhost:3000/api/v1/groceries'
     }
 
-    getGroceries() {
+    getPosts() {
         return fetch(this.baseUrl).then(res => res.json()
         )
     }
 
-    groceryFetch(marketId, groceryItem, groceryNote, marketName) {
+    createPost(marketId, groceryItem, qty, notes) {
+        const grocery = {
+            market_id: marketId,
+            groceryItem: groceryItem,
+            qty: qty,
+            notes: notes,
+        }
+        
         return fetch(this.baseUrl, {
             method: 'POST',
-            headers: {'content-type': 'application/json'},
-            body: JSON.stringify({ market_id: marketId, grocery_item: groceryItem, notes: groceryNote, name: marketName}),
-        })
-        .then(res => res.json())
-    }
-
-    //function to update grocery list
-    // groceryUpdate(marketId, groceryItem, groceryNote, marketName) {
-    //     return fetch(this.baseUrl, {
-    //         method: 'PATCH',
-    //         headers: { 'content-type': 'application/json' },
-    //         body: JSON.stringify({ market_id: marketId, grocery_item: groceryItem, notes: groceryNote, name: marketName }),
-    //     })
-    //         .then(res => res.json())
-    // }
-
-    // updateGrocery(marketId, groceryItem, groceryNote, marketName) {
-    //     debugger
-    //     return fetch(`${this.baseUrl}/${marketId}`, {
-    //         method: 'PATCH',
-    //         headers: { 'content-type': 'application/json' },
-    //         body: JSON.stringify({ market_id: marketId, grocery_item: groceryItem, notes: groceryNote, name: marketName }),
-    //     })
-    //         .then(res => res.json())
-    // }
-
-    updateGrocery(newValue, id) {
-        // console.log(newValue,id)
-        return fetch(`${this.baseUrl}/${id}`, {
-     
-        // return fetch(`${this.baseUrl}/${grocery.id}`, {
-            
-            method: 'PATCH',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ notes: newValue}),
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ grocery }),
         })
             .then(res => res.json())
     }
 
-
-
-
-
-
-
+    updatePost(groceryId, groceryItem, qty, notes, market_id) {
+        //debugger
+        const grocery = {
+            groceryItem: groceryItem,
+            qty: qty,
+            notes: notes,
+            market_id: market_id,
+        }
+        return fetch(`${this.baseUrl}/${groceryId}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({ grocery }),
+        })
+            .then(res => res.json())
+    }
 }
-
-
-
